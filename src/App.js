@@ -1,3 +1,7 @@
+/*in this component we can:
+1. add a goal through the addGoalHandler function 
+2.remove a goal through removeGoalHandler. To remove a goal we use the goal id that comes all the way from GoalItem component*/
+
 import GoalInput from "./components/goals/GoalInput";
 import GoalList from "./components/goals/GoalList";
 import { useState } from "react";
@@ -22,7 +26,22 @@ function App() {
     });
   };
 
-  let content = <GoalList entries={myGoals} />;
+  const removeGoalHandler = (goalId) => {
+    setMyGoals((previousGoals) => {
+      const updatedGoals = previousGoals.filter(
+        (singleGoal) => singleGoal.id !== goalId
+      );
+      return updatedGoals;
+    });
+  };
+
+  let content = (
+    <GoalList
+      entries={myGoals}
+      onDelete={removeGoalHandler}
+      removeGoal4={removeGoalHandler}
+    />
+  );
 
   return (
     <div>
