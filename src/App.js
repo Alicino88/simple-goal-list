@@ -26,7 +26,11 @@ function App() {
       <div className="App">
         <GoalInput onAddGoal={addGoalHandler} />
       </div>
-      <div></div>
+      <div>
+        {myGoals.map((goal) => (
+          <p>{goal.text}</p>
+        ))}
+      </div>
     </div>
   );
 }
