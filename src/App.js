@@ -1,4 +1,5 @@
 import GoalInput from "./components/goals/GoalInput";
+import GoalList from "./components/goals/GoalList";
 import { useState } from "react";
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
     });
   };
 
-  let content = myGoals.map((goal) => <p>{goal.text}</p>);
+  let content = <GoalList entries={myGoals} />;
 
   return (
     <div>
