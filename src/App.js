@@ -21,16 +21,14 @@ function App() {
     });
   };
 
+  let content = myGoals.map((goal) => <p>{goal.text}</p>);
+
   return (
     <div>
       <div className="App">
         <GoalInput onAddGoal={addGoalHandler} />
       </div>
-      <div>
-        {myGoals.map((goal) => (
-          <p>{goal.text}</p>
-        ))}
-      </div>
+      <div>{content}</div>
     </div>
   );
 }
