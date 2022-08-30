@@ -50,10 +50,10 @@ function App() {
 
   return (
     <div>
-      <div className="App">
+      <section id="goal-form">
         <GoalInput onAddGoal={addGoalHandler} />
-      </div>
-      <div>{content}</div>
+      </section>
+      <section id="goals">{content}</section>
     </div>
   );
 }
