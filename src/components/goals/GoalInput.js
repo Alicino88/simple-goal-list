@@ -27,19 +27,9 @@ function GoalInput(props) {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="form-control">
-        <label style={{ color: !isValid ? "#FF6542" : "black" }}>
-          Course Goal
-        </label>
-        <input
-          style={{
-            borderColor: !isValid ? "red" : "#779fa1",
-            background: !isValid ? "#FF6542" : "transparent",
-          }}
-          value={goal}
-          type="text"
-          onChange={goalHandler}
-        />
+      <div className={`form-control ${!isValid ? "invalid" : ""}`}>
+        <label>Course Goal</label>
+        <input value={goal} type="text" onChange={goalHandler} />
         <Button>submit</Button>
       </div>
     </form>

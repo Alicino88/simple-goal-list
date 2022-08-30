@@ -16,3 +16,12 @@
   border: 1px solid #779fa1;
   margin-bottom: 0.5rem;
 }
+
+.form-control.invalid label {
+  color: #ff6542;
+}
+
+.form-control.invalid input {
+  border-color: red;
+  background-color: #ff6542;
+}
