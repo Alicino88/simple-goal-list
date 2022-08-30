@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "../UI/Button";
+import "./GoalInput.css";
 
 function GoalInput(props) {
   const [goal, setGoal] = useState("");
@@ -31,14 +33,14 @@ function GoalInput(props) {
         </label>
         <input
           style={{
-            borderColor: !isValid ? "#564154" : "#ccc",
+            borderColor: !isValid ? "red" : "#779fa1",
             background: !isValid ? "#FF6542" : "transparent",
           }}
           value={goal}
           type="text"
           onChange={goalHandler}
         />
-        <button>submit</button>
+        <Button>submit</Button>
       </div>
     </form>
   );
