@@ -1,4 +1,5 @@
 import GoalItem from "./GoalItem";
+import "./GoalList.css";
 
 function GoalList(props) {
   const removeGoal3 = (id) => {
@@ -6,7 +7,7 @@ function GoalList(props) {
     /*console.log(id);*/
   };
   return (
-    <ul>
+    <ul className="goal-list">
       {props.entries.map((entry) => (
         <GoalItem
           key={entry.id}
