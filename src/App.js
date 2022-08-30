@@ -5,6 +5,7 @@
 import GoalInput from "./components/goals/GoalInput";
 import GoalList from "./components/goals/GoalList";
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [myGoals, setMyGoals] = useState([
@@ -35,13 +36,17 @@ function App() {
     });
   };
 
+  /*When the goal array is empty we display the following message: */
   let content = (
-    <GoalList
-      entries={myGoals}
-      onDelete={removeGoalHandler}
-      removeGoal4={removeGoalHandler}
-    />
+    <p style={{ textAlign: "center" }}>
+      There are no goals yet on your list. Should you add one?
+    </p>
   );
+
+  /*If the goal array is not empty, then we display its content */
+  if (myGoals.length > 0) {
+    content = <GoalList entries={myGoals} removeGoal4={removeGoalHandler} />;
+  }
 
   return (
     <div>
