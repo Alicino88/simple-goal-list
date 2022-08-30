@@ -14,3 +14,9 @@
   background-color: #f5efe4;
   border-radius: 10px;
 }
+
+@media only screen and (max-width: 400px) {
+  #goal-form {
+    width: 18rem;
+  }
+}
